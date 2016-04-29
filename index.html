@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+    body {
+      background: black;
+	  text-align: center;
+	  padding: 20px;
+    }
+    .pcejs {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		font-family: sans-serif;
+		/* the canvas *must not* have any border or padding, or mouse coords will be wrong */
+		border: 0px none;
+		padding: 0;
+		width: 1024px; 
+		height: 684px;
+		image-rendering: optimizeSpeed;             /* Older versions of FF          */
+		image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
+		image-rendering: -webkit-optimize-contrast; /* Safari                        */
+		image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+		image-rendering: pixelated;                 /* Awesome future-browsers       */
+
+    }
+    .pcejs-container { margin-top: 32px }
+    /* macplus has mouse integration, so we can hide the host mouse */
+    .pcejs-canvas { cursor: none }
+	
+	@media (max-width: 1060px) {
+		.pcejs {
+			width: 512px;
+			height: 342px;
+		}
+	}
+	
+	h1 {
+		position: relative;
+		display: inline-block;
+	}
+	
+	h1:before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		image-rendering: optimizeSpeed;             /* Older versions of FF          */
+		image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
+		image-rendering: -webkit-optimize-contrast; /* Safari                        */
+		image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+		image-rendering: pixelated;                 /* Awesome future-browsers       */
+		background-image: url(logo.png);
+		background-repeat: no-repeat;
+		background-size: 100%;
+
+	}
+	
+	hr {
+		border: none;
+		height: 6px;
+		margin-bottom: 40px;
+		background-image: url(line.png);
+		background-size: auto 100%;
+		image-rendering: optimizeSpeed;             /* Older versions of FF          */
+		image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
+		image-rendering: -webkit-optimize-contrast; /* Safari                        */
+		image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+		image-rendering: pixelated;                 /* Awesome future-browsers       */
+	}
+	
+    </style>
+  </head>
+  <body>
+    <audio id="macstartup" src="macstartup.wav" preload="auto"></audio>
+	<h1>Bas du Pr&eacute;</h1>
+	<hr>
+    <div class="pcejs pcejs-container">
+      <div class="pcejs pcejs-loading-status">Downloading...</div>
+      <div class="pcejs">
+        <canvas class="pcejs pcejs-canvas" oncontextmenu="event.preventDefault()"></canvas>
+      </div>
+    </div>
+    <script type="text/javascript" src="bundle.js"></script> 
+  </body>
+</html>
