@@ -23,6 +23,8 @@ macplus({
   },
 })
 
+document.getElementById('macstartup').play();
+
 },{"pcejs-macplus":2,"pcejs-util":5}],2:[function(require,module,exports){
 var xtend = require('xtend')
 var pcejs = require('./lib/pcejs-macplus')
