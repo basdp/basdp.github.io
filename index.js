@@ -21,3 +21,5 @@ macplus({
     loadingStatus.update(remainingDependencies)
   },
 })
+
+document.getElementById('macstartup').play();
