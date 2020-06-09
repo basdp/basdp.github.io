@@ -1,86 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
-    <style type="text/css">
-    body {
-      background: black;
-	  text-align: center;
-	  padding: 20px;
-    }
-    .pcejs {
-		margin-left: auto;
-		margin-right: auto;
-		text-align: center;
-		font-family: sans-serif;
-		/* the canvas *must not* have any border or padding, or mouse coords will be wrong */
-		border: 0px none;
-		padding: 0;
-		width: 1024px; 
-		height: 684px;
-		image-rendering: optimizeSpeed;             /* Older versions of FF          */
-		image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
-		image-rendering: -webkit-optimize-contrast; /* Safari                        */
-		image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
-		image-rendering: pixelated;                 /* Awesome future-browsers       */
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Bas du Pr&eacute;'s web residential area" />
+    <meta name="keywords" content="basdupre,Bas du Pre,max meadow" />
+    <meta name="author" content="© 2020 Bas du Pre" />
+    <meta name="theme-color" content="#212529"/>
+    <link rel="shortcut icon" type="image/jpg" href="">
+    <link rel="shortcut icon" sizes="196x196" href="">
+    <link rel="apple-touch-icon" href="">
 
-    }
-    .pcejs-container { margin-top: 32px }
-    /* macplus has mouse integration, so we can hide the host mouse */
-    .pcejs-canvas { cursor: none }
-	
-	@media (max-width: 1060px) {
-		.pcejs {
-			width: 512px;
-			height: 342px;
-		}
-	}
-	
-	h1 {
-		position: relative;
-		display: inline-block;
-	}
-	
-	h1:before {
-		content: '';
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		image-rendering: optimizeSpeed;             /* Older versions of FF          */
-		image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
-		image-rendering: -webkit-optimize-contrast; /* Safari                        */
-		image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
-		image-rendering: pixelated;                 /* Awesome future-browsers       */
-		background-image: url(logo.png);
-		background-repeat: no-repeat;
-		background-size: 100%;
+    <title>Bas du Pr&eacute;</title>
 
-	}
-	
-	hr {
-		border: none;
-		height: 6px;
-		margin-bottom: 40px;
-		background-image: url(line.png);
-		background-size: auto 100%;
-		image-rendering: optimizeSpeed;             /* Older versions of FF          */
-		image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
-		image-rendering: -webkit-optimize-contrast; /* Safari                        */
-		image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
-		image-rendering: pixelated;                 /* Awesome future-browsers       */
-	}
-	
-    </style>
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <link href="./style.css" rel="stylesheet" />
+    <script src="./lib/vue.min.js"></script>
+
+    <script src="./lib/dialog-polyfill.js"></script>
+    <script src="./lib/highlight.js"></script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bas du Pr&eacute;" />
+    <meta property="og:url" content="https://basdupre.com/" />
+    <meta property="og:description" content="Bas du Pr&eacute;'s web residential area" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111806237-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-111806237-1');
+    </script>
+
   </head>
+
   <body>
-    <audio id="macstartup" src="macstartup.wav" preload="auto"></audio>
-	<h1>Bas du Pr&eacute;</h1>
-	<hr>
-    <div class="pcejs pcejs-container">
-      <div class="pcejs pcejs-loading-status">Downloading...</div>
-      <div class="pcejs">
-        <canvas class="pcejs pcejs-canvas" oncontextmenu="event.preventDefault()"></canvas>
+    <div id="nescss">
+      <header :class="{ sticky: scrollPos > 50 }">
+        <div class="container">
+          <div class="nav-brand">
+            <a href="https://basdupre.com/">
+              <h1>
+                <img
+                  class="brandicon"
+                  :src="brandicon"
+                >
+                Bas du Pr&eacute;</h1>
+            </a>
+            <p>'88, software artist, music, gaming, basketball, movies.</p>
+          </div>
+
+          <!--div class="social-buttons">
+            <p>Share on SNS</p>
+            <div class="share">
+              <a href="https://twitter.com/share?text=NES.css%EF%BD%9CNES-style%20CSS%20Framework%20%40bc_rikko&url=https://nostalgic-css.github.io/NES.css/" target="_blank"><i class="nes-icon twitter"></i></a>
+              <a href="https://www.facebook.com/sharer.php?u=https://nostalgic-css.github.io/NES.css/&t=NES.css%EF%BD%9CNES-style%20CSS%20Framework" target="_blank"><i class="nes-icon facebook"></i></a>
+              <a href="https://www.linkedin.com/shareArticle?url=https%3A//nostalgic-css.github.io/NES.css/&title=NES.css%EF%BD%9CNES-style%20CSS%20Framework" target="_blank"><i class="nes-icon linkedin"></i></a>
+              <a href="https://github.com/nostalgic-css/NES.css" target="_blank"><i class="nes-icon github"></i></a>
+            </div>
+          </div-->
+        </div>
+      </header>
+
+      <div class="container">
+        <main class="main-content">
+          <!--a class="github-link" :class="{ active:  scrollPos < 200 }" href="https://github.com/nostalgic-css/NES.css" target="_blank" rel="noopener" @mouseover="startAnimate" @mouseout="stopAnimate">
+            <p class="nes-balloon from-right">Fork me<br />on GitHub</p>
+            <i class="nes-octocat" :class="animateOctocat ? 'animate' : ''"></i>
+          </a-->
+
+          <section class="topic">
+            <h2 id="about"><a href="#about">#</a>About</h2>
+            <p class="nes-balloon from-left nes-pointer">
+              Hi! My name is Bas du Pr&eacute; and this is my website. It's basically a collection of links to stuff I do or want to share.
+            </p>
+          </section>
+
+          <section class="topic">
+            <h2 id="music"><a href="#music">#</a>Music</h2>
+            <p>Most of my musical endeavours are published through my alter-ego <a href="https://maxmeadow.com" target="_blank">Max Meadow</a>.</p>
+            <p>In the future I will post more experimental stuff here that don't fit the Max Meadow brand.</p>
+          </section>
+
+          <!--section class="topic">
+              <h2 id="articles"><a href="#articles">#</a>Articles</h2>
+              <article class="article-link">
+                <h3 class="title">
+                  <a href="https://medium.com/@bc_rikko/why-i-created-and-released-nes-css-ee8966bacd09" target="_blank" rel="noopener"><i class="nes-icon medium"></i><span>Why I created and released NES.css</span></a>
+                </h3>
+              </article>
+              <article class="article-link">
+                <h3 class="title">
+                  <a href="https://github.blog/2019-01-20-release-radar-december-2018/#nes-css-1-0" target="_blank" rel="noopener"><i class="nes-icon github"></i><span>Release Radar·December 2018|The GitHub Blog</span></a>
+                </h3>
+              </article>
+          </section-->
+
+        </main>
+
+        <footer>
+          <p>
+            <span>&copy; 2020</span>
+            Bas du Pr&eacute;
+          </p>
+        </footer>
+
+        <!-- Copied balloon -->
+        <div class="nes-balloon from-right copied-balloon" :style="copiedBalloon">
+          <p>copied!!</p>
+        </div>
+
+        <!-- FAB Button -->
+        <button type="button" class="nes-btn is-error scroll-btn" :class="{ active: scrollPos > 500 }" @click="window.scrollTo({ top:0, behavior: 'smooth' })"><span>&lt;</span></button>
       </div>
     </div>
-    <script type="text/javascript" src="bundle.js"></script> 
   </body>
+  <script src="./script.js"></script>
+  <script>
+    const h = document.querySelector('head');
+    ['./lib/dialog-polyfill.css', './lib/highlight-theme.css'].forEach(a => {
+      const l = document.createElement('link');
+      l.href = a;
+      l.rel = 'stylesheet';
+      h.appendChild(l);
+    })
+  </script>
 </html>

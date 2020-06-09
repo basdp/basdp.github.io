@@ -1,1 +1,0 @@
-browserify index.js --noparse="node_modules/pcejs-macplus/lib/pcejs-macplus.js" > bundle.js
