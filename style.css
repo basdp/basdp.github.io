@@ -2,19 +2,19 @@
 @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
 
 body {
-  padding: 0 2rem;
-  margin: 0 2rem;
+  padding: 0;
+  margin: 0;
 }
 
 #nescss > .container {
   max-width: 980px;
   margin: 0 auto;
-  margin-top: 180px;
+  margin-top: 40px;
 }
 
 /* Header */
 header {
-  position: fixed;
+  position: realtive;
   top: 0;
   left: 0;
   right: 0;
@@ -52,7 +52,7 @@ header > .container > .social-button {
 }
 
 /* Header-sticky */
-header.sticky > .container {
+/*header.sticky > .container {
   font-size: 0.8rem;
   padding: 0;
   align-items: center;
@@ -64,7 +64,7 @@ header.sticky .nav-brand p {
   display: none;
   margin-bottom: 0;
   font-size: 0.6rem;
-}
+}*/
 
 /* Main */
 .main-content {
