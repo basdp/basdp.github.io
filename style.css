@@ -290,6 +290,10 @@ img.lazy {
   background-color: #D3D3D3;
 }
 
+.small-container {
+  font-size: 12px;
+}
+
 @media screen and (max-width: calc(980px - 4rem)) {
   header > .container {
     margin: 0 4rem;
