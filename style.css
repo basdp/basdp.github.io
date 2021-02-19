@@ -51,6 +51,10 @@ header > .container > .social-button {
   margin-bottom: 0;
 }
 
+.nes-list.is-disc li::before {
+  top: 0.2em;
+}
+
 /* Header-sticky */
 /*header.sticky > .container {
   font-size: 0.8rem;
