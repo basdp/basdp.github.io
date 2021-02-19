@@ -321,7 +321,7 @@ img.lazy {
 
 @media screen and (max-width: 580px) {
   #nescss > .container {
-    margin-top: 0px;
+    margin-top: 20px;
   }
   h1 {
     font-size: 24px;
